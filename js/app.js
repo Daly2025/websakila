@@ -20,26 +20,24 @@ document.getElementById("peliculas").addEventListener("click", function () {
 document.getElementById("new_actor").addEventListener("click", function () {
     document.getElementById("contenido").hidden = true;
     document.getElementById("form_new_actor").hidden = false;
-})
-document.getElementById("form_new_actor").addEventListener("click", function (e) {
+});
+
+document.getElementById("save_actor").addEventListener("click", function () {
     let first_name = document.getElementById("name").value;
     let last_name = document.getElementById("last_name").value;
-    let data = {
-        name: first_name,
-        last_name: last_name
-    };
-    fetch("http://192.168.100.166/apisakila/actor/new", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-    }).then(response => response.json())
-        .then(data => {
-            console.log(data);
-        });
-    });
+    let formData = new FormData();
+    formData.append("name", first_name);
+    formData.append("lastname", last_name);
 
+    fetch("http://192.168.100.166/apisakila/actores/new", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    });
+});
 
 
 
