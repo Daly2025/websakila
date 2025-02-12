@@ -1,15 +1,14 @@
 .container{
     width: 80%;
     margin: 0 auto;
-    border: 1px solid hsl(0, 4%, 10%);
+    border: 1px solid #000;
     border-radius: 5px;
     height: 90vh;
-    background-color: rgb(228, 247, 217);
-    
+    background-color: rgb(224, 245, 245);
 }
 header{
-    background-color: #333333;
-    color: #95ec9c8e;
+    background-color: #333;
+    color: #fff;
     padding: 2px;
     text-align: center;
 }
@@ -18,14 +17,13 @@ main{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    height: 70%;
+    height: 80%;
 }
 aside{
     width: 20%;
     height: 100%;
     border-right: 1px solid #000;
 }
-
 section{
     width: 75%;
     padding: 10px;
@@ -37,10 +35,6 @@ section{
     /* Si prefieres ocultar el scroll horizontal, puedes agregar: */
     overflow-x: hidden;
 }
-
-li{
-    list-style: none;
-    padding: 30px;
-    border-bottom: 1px solid #000;
+aside li{
+    cursor: pointer;
 }
-
